@@ -3,6 +3,7 @@ import './Menu.css';
 
 
 const Menu = () => {
+  var formData = new FormData()
   const [csvFile, setCsvFile] = useState(null);
 
   const handleFileChange = (e) => {
@@ -14,13 +15,16 @@ const Menu = () => {
     }
   };
 
-  const handlePrediction = () => {
-    if (csvFile) {
-        console.log('CSV File:', csvFile);
-      alert('Prediction Logic: Replace this with your ML prediction logic');
-    } else {
-      console.log('No CSV file selected.');
-    }
+  async function handlePrediction (e){
+      e.preventDefault();
+      formData.append("file",csvFile)
+      console.log(formData)
+      const response =  await fetch('http://127.0.0.1:8000/data',{
+      method: 'POST',
+      body: formData
+      })
+      const data=await response.json()
+      console.log(data)
   };
 
   return (
