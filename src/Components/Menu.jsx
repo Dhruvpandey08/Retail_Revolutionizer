@@ -15,6 +15,7 @@ const Menu = () => {
     } else {
       setErrorMessage('Invalid file format. Please upload a CSV file.');
     }
+<<<<<<< HEAD
   };
   
 
@@ -56,6 +57,39 @@ const Menu = () => {
       setLoading(false);
     }
   }
+=======
+  };  
+
+  //check onlu
+  async function handlePrediction (e){
+      e.preventDefault();
+      formData.append("file",csvFile)
+      console.log(formData)
+      const response =  await fetch('http://127.0.0.1:8000/data',{
+      method: 'POST',
+      body: formData
+      })
+      const data=await response.json()
+      let values=data.data;
+      values = JSON.parse(values);
+      //Check
+      console.log(values)
+      for (const productName in values) {
+        if (values.hasOwnProperty(productName)) {
+            const product = values[productName];
+            console.log(productName);
+            console.log("   Old values:");
+            product.OldValue.forEach(value => console.log(`      ${value}`));
+            console.log("   New values (except null):");
+            product.NewValue.forEach(value => {
+                if (value !== "null") {
+                    console.log(`      ${value}`);
+                }
+            });
+        }
+    }
+    };
+>>>>>>> fa7cc4f (Try Commit)
 
   return (
     <div className="menu">
