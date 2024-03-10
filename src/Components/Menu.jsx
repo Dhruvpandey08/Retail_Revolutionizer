@@ -15,49 +15,6 @@ const Menu = () => {
     } else {
       setErrorMessage('Invalid file format. Please upload a CSV file.');
     }
-<<<<<<< HEAD
-  };
-  
-
-  async function handlePrediction(e) {
-    e.preventDefault();
-
-    if (!csvFile) {
-      setErrorMessage('No CSV file selected.');
-      return;
-    }
-    const formData = new FormData();
-    formData.append('file', csvFile);
-
-    setLoading(true);
-
-    try {
-      const response = await fetch('https://backendserver-pfj1.onrender.com/data', {
-        method: 'POST',
-        body: formData,
-      });
-      if (response.ok) 
-      {
-        //const jsonString = await response.text();
-        //const parsedData = JSON.parse(jsonString);
-        //setPredictionData(parsedData); 
-        //console.log('Prediction data:', parsedData);
-        //console.log('Prediction data:', jsonString);
-      } 
-      else 
-      {
-        setErrorMessage('Prediction request failed.');
-        console.error('Prediction request failed.');
-      }
-    } catch (error) {
-      setErrorMessage(`Error during prediction: ${error.message}`);
-      console.error('Error during prediction:', error);
-    }
-    finally {
-      setLoading(false);
-    }
-  }
-=======
   };  
 
   //check onlu
@@ -89,7 +46,6 @@ const Menu = () => {
         }
     }
     };
->>>>>>> fa7cc4f (Try Commit)
 
   return (
     <div className="menu">
