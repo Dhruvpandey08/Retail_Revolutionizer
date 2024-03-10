@@ -1,4 +1,6 @@
 .navbar {
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -7,6 +9,7 @@
     border: 1px solid #000000;
     border-radius: 2px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
 .logo {
