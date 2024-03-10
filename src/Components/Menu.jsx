@@ -37,11 +37,25 @@ const Menu = () => {
       });
       if (response.ok) 
       {
-        //const jsonString = await response.text();
-        //const parsedData = JSON.parse(jsonString);
-        //setPredictionData(parsedData); 
-        //console.log('Prediction data:', parsedData);
-        //console.log('Prediction data:', jsonString);
+        const jsonString = await response.json();
+        let values=jsonString.data;
+        values = JSON.parse(values);
+        console.log(values)
+        for (const productName in values) {
+          if (values.hasOwnProperty(productName)) {
+              const product = values[productName];
+              console.log(productName);
+              console.log("   Old values:");
+              product.OldValue.forEach(value => console.log(`      ${value}`));
+              console.log("   New values (except null):");
+              product.NewValue.forEach(value => {
+                  if (value !== "null") {
+                      console.log(`      ${value}`);
+                  }
+              });
+          }
+      }
+        console.log('Prediction data:', jsonString);
       } 
       else 
       {
