@@ -5,6 +5,7 @@ const Menu = () => {
   const [csvFile, setCsvFile] = useState(null);
   const [errorMessage, setErrorMessage] = useState('');
   const [loading, setLoading] = useState(false);
+  const [Data,SetData] =  useState({})    
 
 
   const handleFileChange = (e) => {
@@ -40,31 +41,32 @@ const Menu = () => {
         const jsonString = await response.json();
         let values=jsonString.data;
         values = JSON.parse(values);
+        SetData(values)
         console.log(values)
-        for (const productName in values) {
-          if (values.hasOwnProperty(productName)) {
-              const product = values[productName];
-              console.log(productName);
-              console.log("   Old values:");
-              product.OldValue.forEach(value => console.log(`      ${value}`));
-              console.log("   New values (except null):");
-              product.NewValue.forEach(value => {
-                  if (value !== "null") {
-                      console.log(`      ${value}`);
-                  }
-              });
+          for (const productName in values) {
+            if (values.hasOwnProperty(productName)) {
+                const product = values[productName];
+                // console.log(productName);
+                // console.log("   Old values:");
+                // product.OldValue.forEach(value => console.log(`      ${value}`));
+                // console.log("   New values (except null):");
+                product.NewValue.forEach(value => {
+                    if (value !== "null") {
+                        // console.log(`      ${value}`);
+                    }
+            });
           }
-      }
-        console.log('Prediction data:', jsonString);
+        } 
+      // console.log('Prediction data:', jsonString);
       } 
       else 
       {
         setErrorMessage('Prediction request failed.');
-        console.error('Prediction request failed.');
+        // console.error('Prediction request failed.');
       }
     } catch (error) {
       setErrorMessage(`Error during prediction: ${error.message}`);
-      console.error('Error during prediction:', error);
+      // console.error('Error during prediction:', error);
     }
     finally {
       setLoading(false);
@@ -86,6 +88,30 @@ const Menu = () => {
       </div>
       <button onClick={handlePrediction} disabled={loading}>Get my Sales Prediction</button>
       {loading && <p>Loading...</p>}
+
+      {!loading && Object.keys(Data).length > 0 ? (
+        <>
+          {Object.entries(Data).map(([productName, product]) => (
+            <div key={productName}>
+              <h2>{productName}</h2>
+              <div className="new-values">
+                {product.NewValue && product.NewValue.length > 0 ? (
+                  product.NewValue
+                    .filter(value => value !== 'null')
+                    .map((value, index) => <span key={index}>{value} </span>)
+                ) : (
+                  <div>No new values found for this product.</div>
+                )}
+              </div>
+            </div>
+          ))}
+        </>
+      ) : (
+        <div>No data available</div>
+      )}
+
+
+
     </div>
   );
 };

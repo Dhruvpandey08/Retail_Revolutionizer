@@ -26,7 +26,7 @@ const Login = () => {
     const lowercaseUsername = username.toLowerCase();
     const lowercasePassword = password.toLowerCase();
 
-    if (lowercaseUsername === 'dhruv' && lowercasePassword === 'pandey') {
+    if (lowercaseUsername === 'admin' && lowercasePassword === 'admin') {
       setLoggedIn(true);
       setError('');
     }
