@@ -11,8 +11,8 @@ const Navbar = () => {
       </div>
       <ul className="nav-links">
         <li><a href="/"><i className="fa fa-fw fa-home"></i> Home</a></li>
-        <li><a href="./AboutComponent"><i className="fa fa-fw fa-info-circle"></i> About</a></li>
-        <li><a href="/contact"><i className="fa fa-fw fa-envelope"></i> Contact</a></li>
+        <li><a href="./About"><i className="fa fa-fw fa-info-circle"></i> About</a></li>
+        <li><a href="./Contact"><i className="fa fa-fw fa-envelope"></i> Contact</a></li>
       </ul>
     </nav>
   );
