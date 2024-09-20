@@ -81,6 +81,7 @@ return (
             </div>
         ):(
         <>
+            <SalesPage Data={Data}/>
         </>
         )}    
 

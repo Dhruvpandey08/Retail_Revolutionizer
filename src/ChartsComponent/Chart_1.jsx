@@ -17,12 +17,7 @@ import {
 
 export const description = "A bar chart with a custom label"
 
-const chartData = [
-  { name: "January", sales: 186 },
-  { name: "February", sales: 305 },
-  { name: "March", sales: 237 },
-  { name: "March", sales: 237 },
-];
+let chartData;
 
 const chartConfig = {
   sales: {
@@ -34,7 +29,9 @@ const chartConfig = {
   },
 }
 
-export function Chart_1() {
+export function Chart_1({SalesData}) {
+  chartData=SalesData;
+  console.log(chartData);
   return (
     <Card>
       <CardHeader>
@@ -90,14 +87,6 @@ export function Chart_1() {
           </BarChart>
         </ChartContainer>
       </CardContent>
-      <CardFooter className="flex-col items-start gap-2 text-sm">
-        <div className="flex gap-2 font-medium leading-none">
-          Trending up by 5.2% this name <TrendingUp className="h-4 w-4" />
-        </div>
-        <div className="leading-none text-muted-foreground">
-          Showing total visitors for the last 6 names
-        </div>
-      </CardFooter>
     </Card>
   )
 }
