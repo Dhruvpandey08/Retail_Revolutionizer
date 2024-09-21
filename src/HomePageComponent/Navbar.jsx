@@ -18,12 +18,12 @@ export default function Navbar() {
         <div className='hidden w-2/5 md:flex font-Montserrat text-2xl  justify-start hidde bg-gradient-to-r bg-clip-text  text-transparent 
             from-indigo-500 via-purple-500 to-indigo-500
             animate-text'>
-            RetailRevolutioner
+            RetailRevolutionizer
         </div>
         <div className="hidden w-full md:flex md:items-center md:justify-end md:w-2/5" id="menu">
             <ul className=" m-3 pt-4 text-2xl gap-0 text-black md:flex md:justify-between md:pt-0 md:m-0 ">
                 <li>
-                    <a className="md:p-4 py-2 block font-Montserrat text-2xl bg-gradient-to-r bg-clip-text  text-transparent from-indigo-500 via-purple-500 to-indigo-500 animate-text">WelCome</a>
+                    <a className="md:p-4 py-2 block font-Montserrat text-2xl bg-gradient-to-r bg-clip-text  text-transparent from-indigo-500 via-purple-500 to-indigo-500 animate-text">Welcome</a>
                 </li>
                 <li>
                     <a className="md:p-4 py-2 block  font-Montserrat text-2xl bg-gradient-to-r bg-clip-text  text-transparent from-indigo-500 via-purple-500 to-indigo-500 animate-text" href="/#">Home</a>

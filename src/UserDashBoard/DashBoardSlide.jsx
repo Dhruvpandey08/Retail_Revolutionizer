@@ -31,8 +31,8 @@ return (
     <div className='flex flex-wrap h-fit items-center bg-slate-50'>
         <div className='w-full sm:w-1/2 sm:p-2 p-5 h-[45vh] flex justify-center items-center'>
             <div className='text-[#373b4e] fill-[#606a7b] text-4xl md:text-4xl lg:text-5xl font-Poppins font-semibold'>
-                <div className='flex justify-start'> Wel-Come To </div>
-                    <div className='text-[#db1a5a] flex justify-statr'> AI World </div>
+                <div className='flex justify-start'> Welcome To </div>
+                    <div className='text-[#db1a5a] flex justify-statr'> Retail Revolutionizer </div>
                         
                         <div className="text-[#373b4e] mt-2 flex justify-start text-base md:text-lg lg:text-xl font-Inter tracking-tighter">
                             Upload You Past Sales Data With Only StockCode,TotalPrice,UnitPrice Column <br/>

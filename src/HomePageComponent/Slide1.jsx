@@ -14,7 +14,7 @@ return (
     </div>
     <div className='w-full sm:w-1/2 sm:p-2 p-5 h-[45vh] flex justify-center items-center'>
         <div className='text-[#373b4e] fill-[#606a7b] text-4xl md:text-4xl lg:text-5xl font-Poppins font-semibold'>
-            <div className='flex justify-start sm:text-2xl md:text-3xl lg:text-5xl'> Wel-Come To </div>
+            <div className='flex justify-start sm:text-2xl md:text-3xl lg:text-5xl'> Welcome To </div>
                 <div className='bg-gradient-to-r bg-clip-text  text-transparent 
                     from-indigo-500 via-purple-500 to-indigo-500
                     animate-textflex justify-start sm:text-2xl md:text-3xl lg:text-5xl'> RetailRevolutioner </div>
