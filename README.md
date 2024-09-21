@@ -1,8 +1,31 @@
-# React + Vite
+# Retail Revolutionizer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Retail Revolutionizer is a web application designed to address the challenges faced by shopkeepers in managing product quantities in their shops. It utilizes historical sales data to predict the quantities of products that should be procured for future stock replenishment, thus optimizing inventory management and reducing stockouts or overstocking.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Predictive inventory management based on historical sales data.
+- User-friendly interface for shopkeepers to input and view data.
+- Automated alerts for low stock or overstock situations (upcoming).
+- Reporting and analytics tools to track inventory performance (upcoming).
+
+## Technologies Used
+
+- Backend: Python, Flask framework and Fast Api
+- Frontend: HTML, CSS, JavaScript, Reactjs
+- Database: Hardcoded (for demo purposes; can be scaled to other databases like MySQL, PostgreSQL)
+- Machine Learning: Scikit-learn (for predictive modeling), LSTM 
+
+## Getting Started
+
+To run this project locally, follow these steps:
+
+1. Clone the repository:
+- git clone https://github.com/dhruvpandey08/retail-revolutionizer.git
+
+
+2. Install dependencies:
+- cd retail-revolutionizer
+- npm start
+
+## ScreenShots
